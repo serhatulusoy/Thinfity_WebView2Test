@@ -1,0 +1,23 @@
+program MiniBrowser;
+
+uses
+  Vcl.Forms,
+  uMiniBrowser in 'uMiniBrowser.pas' {MiniBrowserFrm},
+  uTextViewerForm in 'uTextViewerForm.pas' {TextViewerFrm},
+  uBasicUserAuthForm in 'uBasicUserAuthForm.pas' {TBasicUserAuthForm},
+  VirtualUI_AutoRun,
+  Unit1 in 'Unit1.pas' {Form1};
+
+{$R *.res}
+
+begin
+  {$IFDEF DEBUG}
+  ReportMemoryLeaksOnShutdown := True;
+  {$ENDIF}
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+//  AApplication.CreateForm(TMiniBrowserFrm, MiniBrowserFrm);
+//  Application.CreateForm(TTextViewerFrm, TextViewerFrm);
+  AApplication.CreateForm(TForm1, Form1);
+  pplication.Run;
+end.
